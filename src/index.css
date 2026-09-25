@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3, h4,
+.font-display {
+  font-family: 'Fraunces', ui-serif, Georgia, serif;
+}
+
+:focus-visible {
+  outline: 2px solid #1aa3f5;
+  outline-offset: 2px;
+}
+
+/* Scroll-reveal: elements start hidden, animate in once visible (see useReveal hook) */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.reveal-in {
+  animation: reveal 0.6s ease-out forwards;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #eef2f7;
+}
+::-webkit-scrollbar-thumb {
+  background: #7f9bc0;
+  border-radius: 8px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #0a1830;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #2f5080;
+}
